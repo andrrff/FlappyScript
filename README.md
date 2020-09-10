@@ -1,2 +1,2 @@
 # FlappyScript
-Replica of the famous JavaScript Flappy Bird game with div
+Replica of the famous `JavaScript + Css` Flappy Bird game with div

@@ -1,0 +1,244 @@
+@font-face {
+    font-family: "Flappy";
+    src: url("../src/font/FB.ttf");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.score
+{
+    display: inline;
+    justify-content: center;
+    position: absolute;
+    padding-left: 190px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 30px;
+    font-size: 50px;
+    z-index: 1000;
+}
+
+body
+{
+    display: flex;
+    font-family: Flappy;
+    /* background-image: linear-gradient(rgb(76, 217, 231), rgb(231, 217, 89)); */
+    background: #272B30;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.gameover
+{
+    width: 150px;
+    height: 120px;
+    background: #DED895;
+    display: none;
+    position: relative;
+    border: 5px solid #543847;
+    text-align: center;
+    color: #214000;
+    font-family: Flappy;
+    justify-content: center;
+    align-items: center;
+    top: -110vh;
+    left: 130px;
+    border-radius: 8px;
+    z-index: 100;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.36),
+                inset -5px -5px 0px #D7A84C,
+                inset 5px -5px 0px #D7A84C,
+                inset 5px 5px 0px #D7A84C;
+}
+
+.creditos
+{
+    font-size: 15px;
+    color: #828282;
+
+}
+
+.again
+{
+    margin: 5px;
+}
+
+a
+{
+    color: #214000;
+}
+
+.again:before
+{
+    content: 'RESTART';
+    width: 130px;
+    height: 80px;
+    background:rgb(200, 205, 90);
+    border-radius: 8px;
+}
+
+.game
+{
+    width: 400px;
+    height: 600px;
+    background: rgb(113, 198, 207);
+    align-items: center;
+    /* border:  4px solid rgba(0, 0, 0, 0.48); */
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.36);
+    overflow: hidden;
+    /* background-size: cover; */
+}
+
+.block
+{
+    width: 84px;
+    height: 600px;
+    background: url(../src/img/pilar.png);
+    background-size: cover;
+    position: relative;
+    left: 400px;
+    animation: block 1.8s linear infinite;
+    z-index: 2;
+}
+
+.hole
+{
+    width: 90px;
+    height: 211px;
+    background: url(../src/img/pipe.png);
+    background-color: #70C5CE;
+    background-size: cover;
+    position: relative;
+    border-radius: 5px;
+    left: 400px;
+    top: -400px;
+    animation: block 1.8s linear infinite;
+    /* box-shadow: 0px -10px 0px rgba(0, 0, 0, 0.07),
+                0px 10px 0px rgba(0, 0, 0, 0.07); */
+    z-index: 2;
+}
+
+.background
+{
+    width: 1000px;
+    height: 600px;
+    background: url(../src/img/bg0.png);
+    position: relative;
+    padding-top: 10px;
+    top: -116vh;
+    z-index: 0;
+    animation: bg 10s linear infinite;
+}
+
+.floor
+{
+    width: 1000px;
+    height: 90px;
+    background: url(../src/img/fg.png);
+    background-size: 22.8apx;
+    position: relative;
+    top: -290px;
+    z-index: 3;
+    animation: fg 1.7s linear infinite;
+}
+
+.character
+{
+    width: 55.2px;
+    height: 38.4px;
+    /* background: url(birdSprit.png); */
+    background-size: cover;
+    /* display: flex; */
+    position: relative;
+    display: flex;
+    top: -220vh;
+    left: 50px;
+    z-index: 4;
+}
+
+.character:before
+{
+    content: '';
+    width: 55.2px;
+    height: 38.4px;
+    background: url(../src/img/birdSprit.png);
+    background-size: cover;
+    animation: birdSprite 0.36s steps(3) infinite;
+}
+
+/* animation: shake 5s ease-in-out infinite; */
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 4px, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, -4px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 2px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 1px, 0);
+  }
+}
+
+@keyframes birdSprite
+{
+    0%{background-position: 0px}
+    50%{background-position: 165.45px}
+    100%{background-position: 0px}
+}
+
+@keyframes rotationDown
+{
+    0%{transform: rotateZ(-45deg)}
+    70%{transform: rotateZ(0deg)}
+    100%{transform: rotateZ(25deg)}
+}
+
+@keyframes rotationUp
+{
+    0%{transform: rotateZ(0deg)}
+    100%{transform: rotateZ(-45deg)}
+}
+
+@keyframes bg
+{
+    0%{left: 0px}
+    100%{left: -578px}
+}
+
+@keyframes fg
+{
+    0%{left: -40px}
+    100%{left: -518px}
+}
+
+@keyframes blockum
+{
+    0%{left: 800px}
+    100%{left: -80px}
+}
+
+@keyframes block
+{
+    0%{left: 400px}
+    100%{left: -100px}
+}
+
+@keyframes block
+{
+    0%{left: 400px}
+    100%{left: -100px}
+}

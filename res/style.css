@@ -7,7 +7,6 @@
 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .score
@@ -27,8 +26,7 @@ body
 {
     display: flex;
     font-family: Flappy;
-    /* background-image: linear-gradient(rgb(76, 217, 231), rgb(231, 217, 89)); */
-    background: #272B30;
+    background-image: linear-gradient(rgb(247, 255, 134), rgb(255, 253, 118));
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -133,7 +131,7 @@ a
     background: url(../src/img/bg0.png);
     position: relative;
     padding-top: 10px;
-    top: -116vh;
+    top: -118vh;
     z-index: 0;
     animation: bg 10s linear infinite;
 }
@@ -141,9 +139,8 @@ a
 .floor
 {
     width: 1000px;
-    height: 90px;
+    height: 100px;
     background: url(../src/img/fg.png);
-    background-size: 22.8apx;
     position: relative;
     top: -290px;
     z-index: 3;
@@ -171,38 +168,18 @@ a
     height: 38.4px;
     background: url(../src/img/birdSprit.png);
     background-size: cover;
-    animation: birdSprite 0.36s steps(3) infinite;
-}
-
-/* animation: shake 5s ease-in-out infinite; */
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 4px, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, -4px, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 2px, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 1px, 0);
-  }
+    animation: birdSprite 0.25s steps(3) infinite;
 }
 
 @keyframes birdSprite
 {
     0%{background-position: 0px}
-    50%{background-position: 165.45px}
-    100%{background-position: 0px}
+    100%{background-position: 167px}
 }
 
 @keyframes rotationDown
 {
-    0%{transform: rotateZ(-45deg)}
+    0%{transform: rotateZ(-35deg)}
     70%{transform: rotateZ(0deg)}
     100%{transform: rotateZ(25deg)}
 }
@@ -210,7 +187,7 @@ a
 @keyframes rotationUp
 {
     0%{transform: rotateZ(0deg)}
-    100%{transform: rotateZ(-45deg)}
+    100%{transform: rotateZ(-25deg)}
 }
 
 @keyframes bg

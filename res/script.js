@@ -13,7 +13,7 @@ var pontuacao = 0;
 hole.addEventListener('animationiteration', () =>
 {
     var random = Math.random() * 3;
-    var top = (random * 100) + 320;
+    var top = (random * 110) + 350;
     hole.style.top = -(top) + "px";
 });
 
@@ -24,21 +24,17 @@ function keypush(event)
     switch (event.keyCode)
     {
         case 16:
-            restart()
-            return 1;
-            break;
+        restart()
+        break;
         case 38:
-            jump()
-            return 1;
-            break;
+        jump()
+        break;
         case 32:
-            jump()
-            return 1;
-            break;
+        jump()
+        break;
         case 87:
-            jump()
-            return 1;
-            break;
+        jump()
+        break;
         default:
 
     }
@@ -58,7 +54,7 @@ function restart()
     score.innerText = `${pontuacao}`;
     gravity = 0
     score.innerText = `${0}`;
-
+    return 1;
 }
 
 setInterval(() =>
@@ -67,21 +63,21 @@ setInterval(() =>
         {
             var characterTop =
             parseInt (window.getComputedStyle(character).getPropertyValue("top"));
-            character.style.top = (characterTop + gravity + 0.2) + "px";
+            character.style.top = (characterTop + gravity + 0.07) + "px";
                 setTimeout(() =>
                 {
                     character.style.animation = `rotationDown 350ms ease-in-out`;
                     character.style.transform = `rotateZ(60deg)`;
                 }, 10)
             gravity += 0.25;
-            if (gravity == 3)
-                gravity = 3;
+            if (gravity == 5)
+                gravity = 5;
             var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
             var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
             var characterTop =
                 parseInt (window.getComputedStyle(character).getPropertyValue("top"));
             var cTop = holeTop - 780;
-            if (characterTop > -1025 || (blockLeft < 90) && (characterTop > cTop) && (blockLeft > -30) || (blockLeft < 90) && (characterTop < cTop - 110) && (blockLeft > -20))
+            if (characterTop > -1025 || (blockLeft < 90) && (characterTop > cTop) && (blockLeft > -30) || (blockLeft < 90) && (characterTop < cTop - 100) && (blockLeft > -40))
             {
                 block.style.animation = `none`;
                 hole.style.animation = `none`;
@@ -114,8 +110,8 @@ function jump()
         character.style.top = ((characterTop) - (2.1)) + "px";
         setTimeout(() =>
         {
-            character.style.animation = `rotationUp 40ms ease-in-out`;
-            character.style.transform = `rotateZ(-45deg)`;
+            character.style.animation = `rotationUp 60ms ease-in-out`;
+            character.style.transform = `rotateZ(-35deg)`;
         }, 10)
         if (jumpingCount > 40 && (character.style.transform = `rotateZ(-35deg)`))
         {
